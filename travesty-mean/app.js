@@ -7,7 +7,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-//const passport = require("passport");
+const passport = require("passport");
 const mongoose = require("mongoose");
 const config = require("./config/database");
 
@@ -43,6 +43,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Body Parser Middleware
 app.use(bodyParser.json);
+
+//Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
 
 // Configure such that whenever people go
 // to "example.com/users" they will be routed
