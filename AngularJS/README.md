@@ -12,6 +12,7 @@ STEPS
 - ng serve --open (--open allows automatic launching of browser)
 
  - Component: ng generate component heroes
+ - Selector name in the component.ts file is the tag used when referencing the component in other html files.
  - Two-way binding: [(ngModel)] = 'bound-data'
  - For-loop: *ngFor = 'let elements in list'
  - If: *ngIf = 'condition'
